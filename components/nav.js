@@ -10,6 +10,7 @@ const links = [
 
 const Nav = () => {
   let home = '/gatsby-blog';
+
   return (
       <nav>
         <ul>
