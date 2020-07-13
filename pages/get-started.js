@@ -3,15 +3,15 @@ import React from "react";
 
 export default () => {
     return (
-        <>
+        <div className="container">
             <Nav/>
-            <div className={"container"}>
-                <h1>시작하기</h1>
 
-                <p> npm install </p>
+            <h1>시작하기</h1>
 
-                <code>npm i -g socoolbear-cli</code>
-            </div>
-        </>
+            <p> npm install </p>
+
+            <code>npm i -g socoolbear-cli</code>
+
+        </div>
     )
 }
