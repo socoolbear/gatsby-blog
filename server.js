@@ -12,7 +12,30 @@ const handle = app.getRequestHandler();
 const koaBody = require('koa-body');
 const api = require('./api');
 const firebaseApp = require('./firebase/firebaseApp');
+const db = firebaseApp.firestore();
+const moment = require('moment');
+
 console.log(firebaseApp);
+
+api.get('/feeds', async context => {
+    const result = await db.collection('feeds').get();
+    const list = [];
+    result.forEach(doc => {
+        list.push({id: doc.id, ...doc.data()});
+    })
+    context.body = list;
+});
+
+api.post('/feeds', async context => {
+    const content = context.request.body.content;
+    const now = moment().format('YYYY-MM-DD HH:mm:SS');
+    const doc = await db.collection('feeds').add({
+        content,
+        created_at: now,
+        updated_at: now,
+    });
+    context.body = doc.id;
+});
 
 app
     .prepare()
