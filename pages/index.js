@@ -1,6 +1,10 @@
 import Nav from '../components/nav'
 import Head from 'next/head'
 
+import firebaseApp from "../firebase/firebaseApp";
+
+console.log(firebaseApp)
+
 export default function Home() {
   return (
     <div className="container">

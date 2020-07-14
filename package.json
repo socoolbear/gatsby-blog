@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "node-dev": "nodemon server.js --exec",
+    "node-start": "NODE_ENV=production node server.js",
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
@@ -11,6 +12,8 @@
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
+    "dotenv": "^8.2.0",
+    "firebase": "^7.16.0",
     "koa": "^2.13.0",
     "koa-body": "^4.2.0",
     "koa-router": "^9.1.0",

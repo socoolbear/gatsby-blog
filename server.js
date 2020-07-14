@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const Koa = require('koa');
 const cors = require('@koa/cors');
 const next = require('next');
@@ -9,6 +11,8 @@ const app = next({dev});
 const handle = app.getRequestHandler();
 const koaBody = require('koa-body');
 const api = require('./api');
+const firebaseApp = require('./firebase/firebaseApp');
+console.log(firebaseApp);
 
 app
     .prepare()
