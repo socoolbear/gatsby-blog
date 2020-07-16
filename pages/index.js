@@ -4,6 +4,9 @@ import Head from 'next/head'
 import firebaseApp from "../firebase/firebaseApp";
 
 console.log(firebaseApp)
+console.log('My Application Version', process.env.VERSION);
+console.log('My Next Application Version', process.env.NEXT_PUBLIC_VERSION);
+
 
 export default function Home() {
   return (
